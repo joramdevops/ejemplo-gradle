@@ -2,11 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Pipeline') {
             steps {
-                echo 'Hello World'
+                script {
+                	stage('build & test'){
+
+                	}
+                	stage('sonar'){
+
+                	}
+                	stage('run'){
+
+                	}
+                	stage('rest'){
+
+                	}
+                	stage('nexus'){
+
+                	}
             }
         }
     }
 }
-
