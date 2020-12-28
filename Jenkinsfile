@@ -18,7 +18,7 @@ pipeline {
 					}
 
 					stage('Run'){
-						sh "nohup gradle bootRun &"
+						sh "nohup bash gradlew bootRun &"
 						sleep 20
 					}
 
