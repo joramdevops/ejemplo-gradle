@@ -2,7 +2,7 @@ def call()  {
   
     stage('Compile') {
          
-          sh './mvn clean compile -e'
+          sh 'mvn clean compile -e'
           
          }
         stage('Test') {
