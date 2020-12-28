@@ -2,23 +2,23 @@ def call()  {
   
     stage('Compile') {
          
-          sh './mvn clean compile -e'
+          sh 'mvn clean compile -e'
           
          }
         stage('Test') {
          
-          sh './mvn clean test -e'
+          sh './mvnw clean test -e'
         
         } 
       stage('Jar') {
        
-         sh './mvn clean package -e'
+         sh './mvnw clean package -e'
       }
       
       stage('sonar') {
         
           withSonarQubeEnv(installationName: 'Sonar') {    
-           sh './mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
+           sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
         
        }
       }  
