@@ -20,13 +20,3 @@ pipeline {
             }
         }
     }
-
-    post {
-        success{
-            slackSend color: 'good', message: "[Joram][${env.JOB_NAME}][${env.HERRAMIENTA}]Ejecucion exitosa"           
-        }
-
-        failure{
-            slackSend color: 'danger', message: "[Joram][${env.JOB_NAME}][${env.HERRAMIENTA}]Ejecución fallida en stage [${env.TAREA}]"                   
-        }
-    }
