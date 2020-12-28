@@ -7,19 +7,19 @@
 def call(){
 
 	stage('Build & Test'){
-		sh "gradle clean build"
+		sh "./gradlew clean build"
 	}	
 
 	stage('Sonar'){
 		def scannerHome = tool 'sonar-scanner';
 		//nombre del servidor de sonar en jenkins
-		withSonarQubeEnv('Sonar') {
+		withSonarQubeEnv('sonar-server') {
 			sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
 		}
 	}
 
 	stage('Run'){
-		sh "nohup gradle bootRun &"
+		sh "nohup gradlew bootRun &"
 		sleep 20
 	}
 
