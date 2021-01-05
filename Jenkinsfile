@@ -1,7 +1,7 @@
 pipeline {
 	agent any 
 
-	parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: '') }
+	parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: 'Seleccione la herramienta para la aplicación') }
 
 	stages {
 		stage('Pipelines') {
