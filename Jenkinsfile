@@ -24,10 +24,10 @@ pipeline {
 		post {
 
                 	success {
-			slackSend message: "[Joram Diaz][Pipeline-maven-gradle][${params.herramienta}], color: 'good' Ejecución exitosa."
+			slackSend color: 'good', message: "[Joram Diaz][Pipeline-maven-gradle][${params.herramienta}] Ejecución exitosa."
 			}
 			failure {
-			slackSend message: "[Joram Diaz][Pipeline-maven-gradle][${params.herramienta}], color: 'danger' Ejecución fallida en stage ${TAREA}."
+			slackSend color: 'danger' message: "[Joram Diaz][Pipeline-maven-gradle][${params.herramienta}] Ejecución fallida en stage ${TAREA}."
 			}
 		}
 }
