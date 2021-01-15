@@ -32,6 +32,7 @@ def call(){
 	}
 	
 	stage('gitTagMaster') {
+	    figlet 'Tag'
             when { tag "release-*" }
             steps {
                 echo "Implementar solo si la confirmacion esta etiquetada"
