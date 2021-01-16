@@ -31,16 +31,16 @@ def call(){
 		nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: 'build/libs/DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '0.0.12']]]
 	}
 	
-	stage('gitTagMaster'){
-    		echo "Tagging master with version: ${version}"
-    		fetchMasterFromOrigin()
-    		sshagent([sshKey]) {
-        		int status = sh returnStatus: true, script: "git checkout master && git tag ${version} && git push --tag"
-        		if (status != 0) {
-            		echo "Failed to tag master branch with tag ${version}."
-        		}
-    		}
-	}
+	stage ('TagMaster') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: my_credentials, passwordVariable: 'qucse8vunQutfawjos', usernameVariable: 'joramdevops')]) {
+                        sh "git tag V-{VERSION_NUMBER}-${BUILD_NUMBER}"
+                        sh "git push https://${joramdevops}:${qucse8vunQutfawjos}@myurl V-{VERSION_NUMBER}-${BUILD_NUMBER}"
+                    }
+                }
+            }
+        }
 	
 	
 }
