@@ -45,6 +45,8 @@ def call(){
                     echo 'git tag ${tag}' 
 		    'git push origin ${tag}'
 		    echo 'git push origin ${tag}' 
+		    'git commit -m "hola mundo" '
+		 echo 'commit hola mundo'
               //  } 
             
         } 
