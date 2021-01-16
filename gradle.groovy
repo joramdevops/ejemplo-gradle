@@ -38,9 +38,13 @@ def call(){
             echo 'Tag Main: ${tag}' 
           //         if ((stageOptions.contains('gitTagMaster') || (stageOptions =='')) ) { 
                     'git checkout main'
+		    echo 'git checkout main' 
                     'git fetch --all'
-                    'git tag ${tag}'
-                    'git push origin ${tag}'
+                    echo 'git fetch --all' 
+		    'git tag ${tag}'
+                    echo 'git tag ${tag}' 
+		    'git push origin ${tag}'
+		    echo 'git push origin ${tag}' 
               //  } 
             
         } 
