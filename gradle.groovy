@@ -36,7 +36,7 @@ def call(){
             //Joram
            // env.TAREA =  env.BRANCH_NAME   
             echo 'Tag Main: ${tag}' 
-                   if ((stageOptions.contains('gitTagMaster') || (stageOptions =='')) ) { 
+          //         if ((stageOptions.contains('gitTagMaster') || (stageOptions =='')) ) { 
                     "git checkout main"
                     "git fetch --all"
                     "git tag ${tag}"
