@@ -41,7 +41,7 @@ def call(){
                     'git fetch --all'
                     'git tag ${tag}'
                     'git push origin ${tag}'
-                } 
+              //  } 
             
         } 
 	
