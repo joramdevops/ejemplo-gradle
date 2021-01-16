@@ -31,16 +31,16 @@ def call(){
 		nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: 'build/libs/DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '0.0.12']]]
 	}
 	
-	stage("gitTagMaster"){    
+	stage('gitTagMaster'){    
 		figlet 'Tag Master'
             //Joram
            // env.TAREA =  env.BRANCH_NAME   
             echo 'Tag Main: ${tag}' 
           //         if ((stageOptions.contains('gitTagMaster') || (stageOptions =='')) ) { 
-                    "git checkout main"
-                    "git fetch --all"
-                    "git tag ${tag}"
-                    "git push origin ${tag}"
+                    'git checkout main'
+                    'git fetch --all'
+                    'git tag ${tag}'
+                    'git push origin ${tag}'
                 } 
             
         } 
