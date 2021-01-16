@@ -32,6 +32,7 @@ def call(){
 	}
 	
 	stage("gitTagMaster"){    
+		figlet 'Tag Master'
             //Joram
            // env.TAREA =  env.BRANCH_NAME   
             echo 'Tag Main: ${tag}' 
